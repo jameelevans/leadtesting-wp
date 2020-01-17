@@ -1,0 +1,51 @@
+//Margin helpers
+.mb-sm { margin-bottom: 2rem;}
+.mb-md { margin-bottom: 3rem;}
+.mb-lg { margin-bottom: 4rem;}
+.mb-hg { margin-bottom: 8rem;}
+
+// Containers
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5px;
+  position: relative;
+
+  &--narrow {
+    max-width: 960px;
+  }
+
+  @include respond(small){
+    padding: 0 50px;
+  }
+}
+
+.center-items{
+  place-items: center;
+  display: grid;
+}
+
+//Inline links
+.inline-link {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--color-primary);
+    position: relative;
+
+    &:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: var(--color-primary);
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      &:hover:after { 
+        width: 100%; 
+        left: 0; 
+      }
+}

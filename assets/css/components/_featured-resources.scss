@@ -1,0 +1,98 @@
+.featured-resources {
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(2, max-content);
+    justify-items: center;
+    padding: 10rem 0 5rem;
+
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        grid-gap: 3rem;
+        justify-content: center;
+        margin: 5rem 0;
+        width: 100%;
+
+        @include respond(medium) {
+          grid-template-columns: max-content;
+          grid-template-rows: repeat(3, max-content);
+        }
+
+      .resource {
+
+        &__card {
+          display: block;
+          width: 30rem;
+          height: 40rem;
+          position: relative;
+          border-radius: .5rem;
+          overflow: hidden;
+
+          @include respond(medium) {
+            width: 70vw;
+          }
+        }
+
+        &__image {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: top;
+          width: 100%;
+          height: 72%;
+          transition: all 0.3s ease;
+          
+          @include respond(medium) {
+            height: 73%;
+          }
+        }
+  
+        &__details {
+          position: absolute;
+          width: 100%;
+          min-height: 11.5rem;
+          bottom: 0;
+          background-image: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+          padding: 3rem;
+          text-align: left;
+
+          &::before {
+            background: linear-gradient(to bottom, rgba(var(--color-secondary-rgb),0.9) 0%, rgba(var(--color-secondary-rgb),1) 100%);
+            clip-path: polygon(0 100%, 100% 100%, 0 0);
+            content: '';
+            height: 4rem;
+            left: 0;
+            position: absolute;
+            right: 0;
+            width: 100%;
+            z-index: 1;
+            top: -3.9rem;
+          }
+        }
+
+        &:hover .resource__image,
+          &:focus .resource__image {
+          transform: scale(1.12);
+        }
+
+        &:hover .resource__details{
+          filter: brightness(97%);
+        }
+        
+        &__title{
+          color: var(--color-white);
+          font-size: 1.5rem;
+          font-weight: 400;
+          letter-spacing: 1px;
+        }
+
+        
+
+       
+      }
+    }
+
+
+}
+
+

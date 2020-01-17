@@ -1,0 +1,124 @@
+.footer {
+  display: grid;
+  grid-auto-rows: max-content;
+
+  // Top footer section
+  &__top {
+    background-color: var(--color-secondary-light);
+    padding: 10rem 0 5rem 0;
+    display: grid;
+    place-content: center;
+    clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+
+    .btn {
+      display: inline;
+      margin-left: 1.5rem;
+    }
+  }
+
+  &__cta {
+    margin: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--color-white);
+  }
+
+  // Mid footer section
+  &__mid {
+    padding: 7rem 5rem;
+    background: var(--color-black-light);
+    color: var(--color-grey-dark-1);
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 20% repeat(2, 1fr);
+    grid-column-gap: 5rem;
+    align-items: center;
+
+    @include respond(medium) {
+      grid-template-columns: 100%;
+      grid-column-gap: none;
+      grid-template-rows: repeat(3, max-content);
+      grid-row-gap: 4rem;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    width: 15vw;
+
+    @include respond(medium) {
+      width: 25vw!important;
+    }
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    list-style: none;
+    padding: 6px 0px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid var(--color-grey-dark-2);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-grey-dark-1);
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__copyright {
+    background: var(--color-black-1);
+    color: var(--color-grey-dark);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  &__back-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 2rem;
+    background-color: rgba(var(--color-secondary-rgb), 0.7);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out, background-color .2s ease-out;
+    cursor: pointer;
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-white);
+    z-index: 100;
+    // Make button invisible initially 
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+
+    &:hover {
+      background-color: rgba(var(--color-secondary-rgb), 1);
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  }
+}

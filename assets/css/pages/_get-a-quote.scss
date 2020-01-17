@@ -1,0 +1,26 @@
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5rem;
+    padding: 4rem;
+
+    @include respond(medium) {
+        grid-template-columns: 100%;
+        grid-column-gap: none;
+        grid-template-rows: repeat(2, max-content);
+        grid-row-gap: 2rem;
+        
+        padding: 2rem;
+    }
+
+    &__details {
+        display: grid;
+        grid-auto-rows: max-content;
+        grid-row-gap: 5rem;
+        font-size: 1.6rem;
+    }
+
+    &__content {
+
+    }
+}

@@ -1,0 +1,340 @@
+// Lead section
+.lead {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, max-content);
+    place-items: center;
+    padding: 6rem 1.8rem 10rem 1.8rem;
+    z-index: 2;
+    position: relative;
+    background-color: #ffffff;
+    clip-path: polygon(100% 0, 100% 90%, 50% 100%, 0 90%, 0 0);
+
+    @include respond(med-small) {
+        padding: 3rem 1rem;
+        clip-path: none;
+    }
+
+    
+
+
+    &__heading {
+        text-align: center;
+        margin: 4rem 10vw;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-column-gap: 8rem;
+        padding: 6rem;
+        text-align: center;
+
+        @include respond(medium) {
+            grid-template-columns: max-content;
+            grid-template-rows: repeat(3, max-content);
+            grid-column-gap: none;
+            grid-row-gap: 5rem;
+        }
+    }
+
+    &__issue {
+        display: grid;
+        grid-template-columns: min-content;
+        grid-template-rows: repeat(4, max-content);
+        justify-content: center;
+
+
+        &:nth-of-type(2) {
+            margin-top: 5.5rem;
+
+            @include respond(medium)    {
+                margin-top: 0; 
+            }
+        }
+    }
+
+    &__circle {
+        position: relative;
+        border: 1px solid var(--color-primary);
+        display: grid;
+        place-content: center;
+        justify-self: center;
+        margin-bottom: 4rem;
+        width: 22.5vw;
+        height: 22.5vw;
+        border-radius: 50%;
+        background-color: transparent;
+        text-decoration: none;
+        transition: all .2s ease-in;
+
+        @include respond(medium) {
+            width: 50vw;
+            height: 50vw;
+        }
+
+        &:hover {
+            box-shadow: inset 0px 0px 0px 10px var(--color-primary);
+        }
+    }
+
+    & .icon {
+        color: var(--color-secondary);
+        display: inline;
+        font-size: 7rem;
+    }
+
+    &__line {
+        position: absolute;
+        height: 2.5rem;
+        width: 1px;
+        margin-left: -1px;
+        left: 50%;
+        bottom: -2.5rem;
+        background: var(--color-primary);
+    }
+
+    &__dot {
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        margin-left: -4px;
+        bottom: -32px;
+        left: 50%;
+        border-radius: 50%;
+        background: var(--color-primary);
+    }
+
+    &__details {
+        color: var(--color-secondary);
+        font-style: italic;
+        font-size: var(--font-size-rg);
+        line-height: 1.3;
+        font-weight: 100;
+    }
+
+    .btn {
+        justify-self: center;
+    }
+}
+
+// Services section 
+.services {
+    background-image: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
+    margin-top: -10.5rem;
+    padding: 13rem 0;
+    display: grid;
+    place-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 80%;
+        grid-auto-rows: max-content;
+        row-gap: 2rem;
+        justify-content: center;
+        padding: 5rem 0;
+
+        .service {
+           text-decoration: none;
+
+            &__circle {
+                position: relative;
+                border: 1px solid var(--color-primary-light);
+                display: block;
+                margin: 0 auto 10px auto;
+                width: 22.5rem;
+                height: 22.5rem;
+                border-radius: 50%;
+                font-size: 5rem;
+                background-color: transparent; 
+                
+            }
+
+            & .icon {
+                color: var(--color-white);
+                display: inline;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: font-size .2s ease-in;
+            }
+
+            &__line {
+                width: 13.2rem;
+                background: var(--color-primary);
+                height: 1px;
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -1px;
+
+                @include respond(medium) {
+                    width: 6rem;
+                }
+
+                @include respond(med-small) {
+                    display: none;
+                }
+                
+            }
+
+            &__dot {
+                width: 8px;
+                height: 8px;
+                border: 1px solid var(--color-primary);
+                background: transparent;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                margin-top: -5px;
+
+                @include respond(med-small) {
+                    display: none;
+                }
+            }
+
+            &__details {
+                width: 45%;
+                transition: transform .2s ease-in;  
+
+                @include respond(med-small) {
+                    width: auto;
+                    text-align: center;
+                }
+            }
+
+            &__heading {
+                font-size: 2.4rem;
+                font-weight: 600;
+                color: var(--color-primary);
+                margin: 5.5rem 0 2rem 0;
+
+                @include respond(med-small) {
+                    margin: 1rem 0;
+                }
+            }
+
+            &__content {
+                color: var(--color-white);
+                font-style: italic;
+                font-size: 1.8rem;
+                margin: 0 0 3.4rem;
+            }
+
+            &__odd {
+                float: right;
+                text-align: left;
+
+                .service__circle {
+                    float: left;
+                    margin: 0 19.5rem 0 0;
+
+                    @include respond(medium) {
+                        margin: 0 9.5rem 0 0;
+                    }
+
+                    @include respond(med-small) {
+                        float: none;
+                        margin: 0 auto;
+                    }
+
+                }
+
+                .service__line {
+                    right: -13.2rem;
+                    left: auto;
+
+                    @include respond(medium) {
+                        right: -6rem; 
+                    }
+                }
+
+                .service__dot {
+                    right: -14.2rem;
+
+                    @include respond(medium) {
+                        right: -7rem; 
+                    }
+                }
+
+                .service__details {
+                    float: left;
+
+                    @include respond(med-small) {
+                        float: none;
+                    }
+                }
+
+            }
+
+            &__even {
+                float: left;
+                text-align: right;
+
+                .service__circle {
+                    float: right;
+                    margin: 0 0 0 19.5rem;
+
+                    @include respond(medium) {
+                        margin: 0 0 0 9.5rem;
+                    }
+
+                    @include respond(med-small) {
+                        float: none;
+                        margin: 0 auto;
+                    }
+                }
+
+                .service__line {
+                    left: -13.2rem;
+                    right: auto;
+
+                    @include respond(medium) {
+                        left: -6rem; 
+                    }
+                }
+
+                .service__dot {
+                    left: -14.2rem;
+
+                    @include respond(medium) {
+                        left: -7rem; 
+                    }
+                }
+
+                .service__details {
+                    float: right;
+
+                    @include respond(med-small) {
+                        float: none;
+                    }
+                }
+            }
+            
+            // Service hover styles
+            &:hover .service__circle{
+                box-shadow: inset 0px 0px 0px 10px var(--color-primary);
+                transition: box-shadow .2s ease-in;
+            }
+
+            &:hover .service__details{
+                transform: scale(1.08);
+            }
+
+            &:hover .icon{
+                font-size: 6rem;
+            }
+
+
+        }
+
+    }
+}

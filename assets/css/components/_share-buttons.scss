@@ -1,0 +1,28 @@
+.share-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    right: 4vw;
+    display: grid;
+    grid-template-rows: repeat(3, 3.5rem);
+    grid-template-columns: 3.5rem;
+    place-items: center;
+
+  
+    li {
+      list-style: none;
+  
+  
+      a {
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 22px;
+        transition: color 0.2s ease-in;
+  
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+  }
+  

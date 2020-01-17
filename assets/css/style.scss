@@ -1,0 +1,111 @@
+/*
+Theme Name: Lead Testing Center WP Theme
+Author: Jameel Evans
+Description: This theme was designed and coded by Jameel Evans.
+Version: 2.0
+Text Domain: leadtesting.center
+ */
+
+ /**
+--------------------------------------------------------------
+*! TABLE OF CONTENTS:
+--------------------------------------------------------------
+*  TODO: Import scss modules in the correct area as needed
+*
+* * | Abstracts |
+*   Variables  --> All project variables
+*   Mixins --> All project mixins
+*   Functions --> All project functions
+*
+* * | Base |
+*   Typography   --> All things typography in one place
+*   Base --> Basic project definition
+*   Animations --> All project animations
+*   Utilities --> All utility helper classes
+*
+* * | Components |
+*   Buttons
+*   Banner
+*   Featured Resources
+*   Share Buttons
+*   Generic Content
+*
+*
+* * | Layout |
+*   Header
+*   Navigation
+*   Footer
+*
+*
+* * | Pages |
+*   Front page
+*   Get a Quote
+
+
+--------------------------------------------------------------*/
+
+//* --------| Abstracts |--------*//
+
+// * Variables
+@import "abstracts/variables";
+
+ //  * Mixins
+@import "abstracts/mixins";
+
+  //  * Functions
+ // @import "abstracts/functions";
+
+
+//*-------| Base |--------*//
+
+ //  * Typography
+@import "base/typography";
+
+ //  * Global
+ @import "base/base";
+
+//  * Animations
+@import "base/animations";
+
+//  * Utilities
+@import "base/utilities";
+
+
+//*--------| Components |--------*//
+//  * Buttons
+@import "components/buttons";
+
+//  * Banner
+@import "components/banner";
+
+//  * Featured Resources
+@import "components/featured-resources";
+
+//  * Share Buttons
+@import "components/share-buttons";
+
+//  * Generic Content
+@import "components/generic-content";
+
+
+
+//*--------| Layouts |--------*//
+//  * Header
+@import "layout/header";
+
+//  * Navigation
+@import "layout/navigation";
+
+//  * Footer
+@import "layout/footer";
+
+
+
+
+//*--------| Pages |--------*//
+
+//  * Front page
+@import "pages/front-page";
+
+//  * Get a Quote
+@import "pages/get-a-quote";

@@ -1,0 +1,17 @@
+// * Simple CSS Reset
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--color-primary);
+    color: #fff;
+}

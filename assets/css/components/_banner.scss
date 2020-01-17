@@ -1,0 +1,92 @@
+.banner{
+    background: linear-gradient(115deg, rgba(var(--color-secondary-rgb),1) 0%, rgba(var(--color-secondary-rgb),1) 40%, rgba(var(--color-secondary-rgb),0.9) 60%, rgba(var(--color-secondary-rgb),0) 60%, rgba(var(--color-secondary-rgb),0) 100%),
+    url(assets/img/banner-image-template.jpg) no-repeat center right;
+    padding: 5rem 5vw;
+
+    @include respond(small) {
+      background: linear-gradient(to bottom, var(--color-secondary), var(--color-secondary-light)) ;
+    }
+
+    &__content {
+        border-left: 2px solid var(--color-primary);
+        padding: 2rem;
+        color: var(--color-white);
+        
+
+        @include respond(small) {
+          border-left: none;
+          text-align: center;
+          padding: 1rem;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 500;
+
+        @include respond(small) {
+          font-size: 2.9rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: var(--font-size-rg);
+        font-weight: 100;
+        margin: 1rem 0;
+
+        @include respond(small) {
+          font-size: 1.8rem;
+          margin: 1rem 0 3rem;
+        }
+    }
+}
+
+.banner-border{
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(-45deg, var(--color-primary-dark), var(--color-primary), var(--color-primary-light), var(--color-secondary), var(--color-secondary-light));
+    background-size: 400% 400%;
+    animation: header-border 15s ease infinite;
+      
+}
+
+.page-banner {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    text-transform: uppercase;
+  
+      &__headline{
+        font-size: 3.5rem;
+        margin: 5rem 0 2rem;
+
+      }
+  
+      &__bg-image {
+        background-size: cover;
+        background-position: center;
+        padding: 3rem 0 3rem 5vw;
+        position: relative;
+        display: grid;
+        grid-template-columns: 90% 1fr;
+      }
+  
+  
+      &__breadcrumbs{
+        position: relative;
+        font-size: 1rem;
+        padding-bottom: 3rem;
+  
+        a{
+          text-decoration: none;
+          color: rgba(var(--color-white-rgb), .6);
+          transition: color .2s ease-in;
+  
+          &:hover{
+            color: var(--color-primary);
+          }
+        }
+      }
+  
+  
+    }
+  
